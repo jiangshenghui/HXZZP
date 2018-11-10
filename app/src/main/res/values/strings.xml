@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">赚赚拍</string>
+    <string name="umeng_appkey">5be54ff7f1f556a8fc000181</string>
+    <string name="umeng_message_secret">b9e8c7ff062dbff08aedeb68f399ebd7</string>
+    <string name="pwd_validate">两次输入不一致，请重新输入</string>
+    <string-array name="vip_levels">
+        <item>vip1合伙人¥10000元</item>
+        <item>vip2合伙人¥20000元</item>
+        <item>vip3合伙人¥30000元</item>
+        <item>vip4合伙人¥40000元</item>
+        <item>vip5合伙人¥50000元</item>
+        <item>vip6合伙人¥60000元</item>
+        <item>vip7合伙人¥70000元</item>
+        <item>vip8合伙人¥80000元</item>
+        <item>vip9合伙人¥90000元</item>
+        <item>vip10合伙人¥100000元</item>
+    </string-array>
+    <string-array name="vip_descs">
+        <item>赠送10000股港股股票积分 可享团队赚拍总收益10%奖金提成</item>
+        <item>赠送20000股港股股票积分 可享团队赚拍总收益11%奖金提成</item>
+        <item>赠送30000股港股股票积分 可享团队赚拍总收益12%奖金提成</item>
+        <item>赠送40000股港股股票积分 可享团队赚拍总收益13%奖金提成</item>
+        <item>赠送50000股港股股票积分 可享团队赚拍总收益14%奖金提成</item>
+        <item>赠送60000股港股股票积分 可享团队赚拍总收益15%奖金提成</item>
+        <item>赠送70000股港股股票积分 可享团队赚拍总收益16%奖金提成</item>
+        <item>赠送80000股港股股票积分 可享团队赚拍总收益17%奖金提成</item>
+        <item>赠送90000股港股股票积分 可享团队赚拍总收益18%奖金提成</item>
+        <item>赠送100000股港股股票积分 可享团队赚拍总收益19%奖金提成</item>
+    </string-array>
+</resources>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="#F6F7F9"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="30dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分享至"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="12dp"
+            android:textColor="#737373"
+            android:textSize="12sp" />
+        <LinearLayout
+            android:id="@+id/top"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:id="@+id/layout_copy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_copy1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/btn_share_copy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_copy1"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/umeng_copy"
+                        android:textColor="#737373"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/layout_wx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_wx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/btn_share_wx" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_wx"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/umeng_socialize_text_weixin_key"
+                        android:textColor="#737373"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/layout_pengyou"
+                    android:layout_width="match_parent"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_wx_pengyou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/btn_share_friend_circle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_wx_pengyou"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/umeng_socialize_text_weixin_circle_key"
+                        android:textColor="#737373"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/layout_weibo"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/iv_wb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/btn_share_weibo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_wb"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/umeng_socialize_text_sina_key"
+                        android:textColor="#737373"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/layout_qq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_qq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/btn_share_qq" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_qq"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/umeng_socialize_text_qq_key"
+                        android:textColor="#737373"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_dialog_cancel"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:layout_height="48dp">
+        <TextView
+            android:id="@+id/tv_dialog_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textColor="#737373"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>
