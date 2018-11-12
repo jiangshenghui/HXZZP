@@ -259,7 +259,7 @@ public class RegisterActivity extends RvBaseActivity {
             return;
         }
         if (!StringUtils.isIDNumber(idCard)) {
-            ToastUtil.showShortToast("输入身份证号格式不正确");
+            ToastUtil.showShortToast("请输入正确的身份证号");
             return;
         }
         if (TextUtils.isEmpty(invitCode)) {

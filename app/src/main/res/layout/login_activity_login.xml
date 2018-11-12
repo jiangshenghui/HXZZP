@@ -11,7 +11,7 @@
         android:layout_height="@dimen/x273"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/x266"
-        android:src="@mipmap/icon_login_init" />
+        android:src="@mipmap/icon_partner_pai" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
