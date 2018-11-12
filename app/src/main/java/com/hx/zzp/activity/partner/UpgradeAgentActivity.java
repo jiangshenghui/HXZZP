@@ -1,5 +1,7 @@
 package com.hx.zzp.activity.partner;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,7 +17,6 @@ import android.widget.TextView;
 import com.bg.baseutillib.net.RxNetCallback;
 import com.bg.baseutillib.net.exception.ApiException;
 import com.bg.baseutillib.tool.ToastUtil;
-import com.bg.baseutillib.view.TitleBarView;
 import com.hx.zzp.R;
 import com.hx.zzp.RvBaseActivity;
 import com.hx.zzp.dialog.SelectDialog;
@@ -43,8 +44,12 @@ public class UpgradeAgentActivity extends RvBaseActivity implements SelectDialog
     @BindView(R.id.tv_parner)
     TextView tvParner;
 
+    @BindView(R.id.tv_invitation_codev)
+    TextView tvInvitationCodev;
+
     private String inviteUrl;
     private String level;
+    private String inviteCode;
     @Override
     public void initViews(Bundle savedInstanceState) {
         super.initViews(savedInstanceState);
@@ -64,7 +69,7 @@ public class UpgradeAgentActivity extends RvBaseActivity implements SelectDialog
     public int setLayoutResID() {
         return R.layout.activity_upgrade_agent;
     }
-    @OnClick({R.id.btn_upgrade,R.id.re_title_left_icon,R.id.re_title_right_icon})
+    @OnClick({R.id.btn_upgrade,R.id.re_title_left_icon,R.id.re_title_right_icon,R.id.re_invitation_copy})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_upgrade://升级代理人
@@ -83,6 +88,12 @@ public class UpgradeAgentActivity extends RvBaseActivity implements SelectDialog
                 SelectDialog dlg = new SelectDialog(mContext, 0, inviteUrl,
                        "","");
                 dlg.showDialog((SelectDialog.DialogButtonClickListener) mContext);
+                break;
+            case R.id.re_invitation_copy:
+                ClipboardManager mClipboardManager = (ClipboardManager)  mContext.getSystemService(CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("copy from 赚赚拍",inviteCode);
+                mClipboardManager.setPrimaryClip(clipData);
+                ToastUtil.showShortToast("复制成功");
                 break;
         }
     }
@@ -123,8 +134,12 @@ public class UpgradeAgentActivity extends RvBaseActivity implements SelectDialog
                         tvParner.setText("VIP"+userBean.level+"合伙人");
                     }
                     inviteUrl = userBean.inviteUrl;
+                    inviteCode =  userBean.inviteCode;
+                    if(!TextUtils.isEmpty(inviteCode)){
+                        tvInvitationCodev.setText(inviteCode);
+                    }
                     level = userBean.level;
-                    generateQrCode(inviteUrl);
+//                    generateQrCode(inviteUrl);
                 }
             }
             @Override

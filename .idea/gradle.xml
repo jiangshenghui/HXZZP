@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/baseutillib" />
             <option value="$PROJECT_DIR$/umeng_scoial_sdk" />
+            <option value="$PROJECT_DIR$/update" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

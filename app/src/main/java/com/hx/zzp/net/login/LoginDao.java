@@ -16,6 +16,8 @@ import com.hx.zzp.net.login.response.CodeBean;
 import com.hx.zzp.net.login.response.SessionBean;
 import com.hx.zzp.net.login.response.UserBean;
 import com.hx.zzp.utils.AppUserData;
+import com.hx.zzp.utils.Sha1;
+
 import java.util.HashMap;
 import java.util.Map;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -31,7 +33,7 @@ public class LoginDao extends BaseRequestDao {
                       final RxNetCallback<SessionBean> callback) {
         Map<String, String> paramsMap = new HashMap<String, String>();
         paramsMap.put("phone",mobile);
-        paramsMap.put("password",password);
+        paramsMap.put("password",Sha1.getSha1(password));
         NetworkRequest.getNetService(context, LoginNetService.class, ApiManager.HOST)
                 .login(paramsMap)
                 .map(new ServerResponseFunc<SessionBean>())//有时我们会需要使用操作符进行变换
@@ -168,10 +170,16 @@ public class LoginDao extends BaseRequestDao {
     /**
      * 注册
      */
-    public void register(final Context context, RegisterBody body,
+    public void register(final Context context, final  RegisterBody body,
                          final RxNetCallback<SessionBean> callback) {
+        Map<String, String> paramsMap = new HashMap<String, String>();
+        paramsMap.put("phone",body.getMobile());
+        paramsMap.put("password",Sha1.getSha1(body.getPassword()));
+        paramsMap.put("captcha",body.getValidCode());
+        paramsMap.put("inviteCode",body.inviteCode);
+        paramsMap.put("idCard",body.idCard);
         NetworkRequest.getNetService(context, LoginNetService.class, ApiManager.HOST)
-                .register(body)
+                .register(paramsMap)
                 .map(new ServerResponseFunc<SessionBean>())
                 .onErrorResumeNext(new HttpResponseFunc<SessionBean>())
                 .subscribeOn(Schedulers.io())
@@ -194,28 +202,28 @@ public class LoginDao extends BaseRequestDao {
 
                     @Override
                     public void onNext(final SessionBean value) {
-                        AppUserData.getInstance().setSessionId(value.getBussData());
+                        AppUserData.getInstance().setSessionId(value.token);
+                        SharedPreferencesUtil.writeCookie("authorization",value.token);
+                        findDetail(context, new RxNetCallback<UserBean>() {
+                            @Override
+                            public void onSuccess(UserBean userBean) {
+                                if (userBean != null) {
+                                    userBean.mobile = body.getMobile();
+                                    AppUserData.getInstance().setUserBean(userBean);
+                                    AppUserData.getInstance().setIsLogin(true);
+                                    if (callback != null) {
+                                        callback.onSuccess(value);
+                                    }
+                                }
+                            }
 
-//                        findDetail(context, value.getBussData(), new RxNetCallback<UserBean>() {
-//                            @Override
-//                            public void onSuccess(UserBean userBean) {
-//                                if (userBean != null) {
-//                                    AppUserData.getInstance().setUserBean(userBean);
-//                                    AppUserData.getInstance().setIsLogin(true);
-//
-//                                    if (callback != null) {
-//                                        callback.onSuccess(value);
-//                                    }
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onError(ApiException e) {
-//                                if (callback != null) {
-//                                    callback.onError(e);
-//                                }
-//                            }
-//                        });
+                            @Override
+                            public void onError(ApiException e) {
+                                if (callback != null) {
+                                    callback.onError(e);
+                                }
+                            }
+                        });
                     }
                 });
     }
@@ -264,7 +272,7 @@ public class LoginDao extends BaseRequestDao {
                               final RxNetCallback<SessionBean> callback) {
         Map<String, String> paramsMap = new HashMap<String, String>();
         paramsMap.put("phone",body.getMobile());
-        paramsMap.put("password",body.getPassword());
+        paramsMap.put("password",Sha1.getSha1(body.getPassword()));
         paramsMap.put("captcha",body.getValidCode());
         NetworkRequest.getNetService(context, LoginNetService.class, ApiManager.HOST)
                 .resetPassword(paramsMap)

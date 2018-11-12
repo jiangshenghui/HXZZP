@@ -16,6 +16,8 @@ public class RegisterBody {
     private String mobile;
     private String password;
     private String validCode;
+    public String inviteCode;
+    public String idCard;
 
     public String getMobile() {
         return mobile;

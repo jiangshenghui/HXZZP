@@ -23,22 +23,24 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_zzp_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.login.LoginActivity"
+        <activity
+            android:name=".activity.login.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>>
+            </intent-filter>
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -49,7 +51,7 @@
         <activity android:name=".activity.partner.PaySuccessActivity" />
         <activity
             android:name=".activity.partner.UpgradeAgentActivity"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask" />
         <activity android:name=".activity.partner.UpgradeAgentActivity1" />
         <!-- alipay sdk begin -->
         <activity
@@ -58,25 +60,24 @@
             android:exported="false"
             android:screenOrientation="behind"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".activity.partner.ExplainActivity"></activity>
-
+        <activity android:name=".activity.partner.ExplainActivity" />
         <activity
             android:name=".activity.login.ResetPasswordActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="@string/umeng_appkey" />
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="Wandoujia" />
+
         <activity
             android:name="com.umeng.socialize.media.WBShareCallBackActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:exported="false"
-            >
-        </activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
         <activity
             android:name="com.umeng.qq.tencent.AuthActivity"
             android:launchMode="singleTask"
@@ -94,6 +95,7 @@
             android:name="com.umeng.qq.tencent.AssistActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".activity.login.RegisterActivity"></activity>
     </application>
 
 </manifest>

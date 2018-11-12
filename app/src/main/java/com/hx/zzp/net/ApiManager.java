@@ -42,7 +42,7 @@ public class ApiManager {
     /**
      * app注册
      */
-    public static final String REGISTER = "api/app/usercore/register";
+    public static final String REGISTER = "api/user/reg";
     /**
      * 校验是否注册
      */

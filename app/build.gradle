@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 
-
 /**
  * 加载签名配置文件
  */
@@ -44,7 +43,7 @@ android {
 //            keyAlias 'key0'
 //            keyPassword 'hx123456'
 //        }
-    loadSigningConfigs() //加载签名信息
+        loadSigningConfigs() //加载签名信息
     }
     buildTypes {
         release {
@@ -95,4 +94,5 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.1'
     implementation files('libs/alipaySdk-20180403.jar')
     implementation project(':umeng_scoial_sdk')
+    implementation project(':update')
 }

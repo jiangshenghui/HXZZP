@@ -41,7 +41,7 @@ public interface LoginNetService {
      * 注册
      */
     @POST(ApiManager.REGISTER)
-    Observable<BaseResponse<SessionBean>> register(@Body RegisterBody body);
+    Observable<BaseResponse<SessionBean>> register(@Body Map<String, String> paramsMap);
 
     /**
      * 获取验证码

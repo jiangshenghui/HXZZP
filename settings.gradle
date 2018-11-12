@@ -1,1 +1,1 @@
-include ':app', ':baseutillib', ':umeng_scoial_sdk'
+include ':app', ':baseutillib', ':umeng_scoial_sdk', ':update'
