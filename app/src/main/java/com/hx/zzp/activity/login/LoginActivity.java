@@ -20,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.ToggleButton;
 import com.bg.baseutillib.net.RxNetCallback;
 import com.bg.baseutillib.net.exception.ApiException;
-import com.bg.baseutillib.tool.SharedPreferencesUtil;
 import com.bg.baseutillib.tool.SystemUtils;
 import com.bg.baseutillib.tool.ToastUtil;
 import com.hx.zzp.R;
