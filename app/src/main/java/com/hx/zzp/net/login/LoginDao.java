@@ -92,7 +92,7 @@ public class LoginDao extends BaseRequestDao {
                       final RxNetCallback<SessionBean> callback) {
         Map<String, String> paramsMap = new HashMap<String, String>();
         paramsMap.put("name",name);
-        paramsMap.put("idCard",idCard);
+//        paramsMap.put("idCard",idCard);
         paramsMap.put("level",level);
         NetworkRequest.getNetService(context, LoginNetService.class, ApiManager.HOST)
                 .bePartner(paramsMap)

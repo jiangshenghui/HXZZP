@@ -258,10 +258,10 @@ public class RegisterActivity extends RvBaseActivity {
             ToastUtil.showShortToast("请输入身份证号");
             return;
         }
-//        if (TextUtils.isEmpty(etInvitCode)) {
-//            ToastUtil.showShortToast("请输入邀请码");
-//            return;
-//        }
+        if (TextUtils.isEmpty(invitCode)) {
+            ToastUtil.showShortToast("请输入邀请码");
+            return;
+        }
         /*if (!ckbAgree.isChecked()) {
             ToastUtil.showShortToast("请阅读并同意《驴道租车用户协议》");
             return;

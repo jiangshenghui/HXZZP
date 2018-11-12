@@ -234,11 +234,11 @@ public class PartnerStatementActivity extends RvBaseActivity {
             isValidate = false;
             return  isValidate;
         }
-        if (TextUtils.isEmpty(etIdCard.getText().toString().trim())) {
-            ToastUtil.showShortToast("请输入身份证号");
-            isValidate = false;
-            return  isValidate;
-        }
+//        if (TextUtils.isEmpty(etIdCard.getText().toString().trim())) {
+//            ToastUtil.showShortToast("请输入身份证号");
+//            isValidate = false;
+//            return  isValidate;
+//        }
         if(TextUtils.isEmpty(tvParnerLevel.getText().toString())){
             ToastUtil.showShortToast("请选择代理人等级");
             isValidate = false;
