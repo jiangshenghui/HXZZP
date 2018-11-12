@@ -40,7 +40,7 @@ import butterknife.OnClick;
 public class LoginActivity extends RvBaseActivity {
 
     @BindView(R.id.etPhone)
-    EditText etPhone;//dddddddd
+    EditText etPhone;//git github 成功啦
     @BindView(R.id.etPassword)
     EditText etPassword;
     @BindView(R.id.tbLook)
