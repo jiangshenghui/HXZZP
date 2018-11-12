@@ -131,7 +131,7 @@ public class LoginActivity extends RvBaseActivity {
                 login();
                 break;
             case R.id.tvRegister://注册
-//                startActivityForResult(RegisterActivity.class, 125);
+                startActivityForResult(RegisterActivity.class, 125);
                 break;
             case R.id.tvForgetPassword://忘记密码
                 Bundle bundle = new Bundle();
