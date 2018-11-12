@@ -258,6 +258,10 @@ public class RegisterActivity extends RvBaseActivity {
             ToastUtil.showShortToast("请输入身份证号");
             return;
         }
+        if (!StringUtils.isIDNumber(idCard)) {
+            ToastUtil.showShortToast("输入身份证号格式不正确");
+            return;
+        }
         if (TextUtils.isEmpty(invitCode)) {
             ToastUtil.showShortToast("请输入邀请码");
             return;

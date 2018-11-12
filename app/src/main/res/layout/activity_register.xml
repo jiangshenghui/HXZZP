@@ -143,6 +143,7 @@
                 android:layout_toRightOf="@+id/ivPassword"
                 android:background="@null"
                 android:hint="请输入验证码"
+                android:inputType="number"
                 android:maxLength="10"
                 android:textColorHint="@color/login_color_hint"
                 android:textSize="@dimen/x48" />
