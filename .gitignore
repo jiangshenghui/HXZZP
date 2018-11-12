@@ -9,4 +9,4 @@
 /build
 /captures
 .externalNativeBuild
-.sigining.properties
+/.sigining.properties
