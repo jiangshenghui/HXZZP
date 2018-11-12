@@ -128,10 +128,10 @@ public class NetworkRequest {
                             .addInterceptor(new Interceptor() {
                                 @Override
                                 public Response intercept(Chain chain) throws IOException {
-                                    if (TextUtils.isEmpty(cookieName) || TextUtils.isEmpty(cookieValue)) {
+//                                    if (TextUtils.isEmpty(cookieName) || TextUtils.isEmpty(cookieValue)) {
                                         cookieName = SharedPreferencesUtil.readCookieName();
                                         cookieValue = SharedPreferencesUtil.readCookieVaule();
-                                    }
+//                                    }
 
 
                                     Request request = chain.request();

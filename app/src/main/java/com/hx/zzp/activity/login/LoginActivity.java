@@ -173,7 +173,7 @@ public class LoginActivity extends RvBaseActivity {
                 }
                 if (userBean != null) {//登录成功
                     ToastUtil.showShortToast("登录成功");
-                    AppUserData.getInstance().setSessionId(userBean.getBussData());
+//                    AppUserData.getInstance().setSessionId(userBean.getBussData());
                     AppUserData.getInstance().setMobile(account);
                     AppUserData.getInstance().setPassWord(pwd);
                     AppUserData.getInstance().setIsLogin(true);
