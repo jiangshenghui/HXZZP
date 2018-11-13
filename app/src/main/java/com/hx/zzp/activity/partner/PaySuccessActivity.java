@@ -2,6 +2,7 @@ package com.hx.zzp.activity.partner;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.bg.baseutillib.base.BaseRequestDao;
 import com.bg.baseutillib.view.TitleBarView;
@@ -22,8 +23,12 @@ public class PaySuccessActivity  extends RvBaseActivity {
     @BindView(R.id.tv_vip_amount)
     TextView tvAmount;
 
+    @BindView(R.id.iv_pay_logo)
+    ImageView ivPayLogo;
+
     private String amount;
     private String vipLevel;
+    private String type;
 
 
     @Override
@@ -45,9 +50,17 @@ public class PaySuccessActivity  extends RvBaseActivity {
         if (getIntent().getSerializableExtra("vipLevel") != null) {
             vipLevel = getIntent().getStringExtra("vipLevel");
         }
-
+        if (getIntent().getSerializableExtra("type") != null) {
+            type = getIntent().getStringExtra("type");
+        }
         tvVipLevel.setText(vipLevel+"合伙人");
         tvAmount.setText(getString(R.string.util_money)+amount);
+
+        if("2".equals(type)){//微信支付
+            ivPayLogo.setImageResource(R.mipmap.ic_pay_wx);
+        }else {
+            ivPayLogo.setImageResource(R.mipmap.ic_pay_alpay);
+        }
     }
     @OnClick({R.id.re_complete,R.id.re_title_left_icon})
     public void onViewClicked(View view) {

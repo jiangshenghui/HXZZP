@@ -26,11 +26,15 @@ import com.hx.zzp.R;
 import com.hx.zzp.RvBaseActivity;
 import com.hx.zzp.activity.partner.PartnerStatementActivity;
 import com.hx.zzp.activity.partner.UpgradeAgentActivity;
+import com.hx.zzp.event.LoginEvent;
 import com.hx.zzp.net.login.LoginDao;
 import com.hx.zzp.net.login.response.SessionBean;
 import com.hx.zzp.utils.AppConfig;
 import com.hx.zzp.utils.AppUserData;
 import com.hx.zzp.utils.Utils;
+
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 /**
@@ -177,7 +181,7 @@ public class LoginActivity extends RvBaseActivity {
                     AppUserData.getInstance().setMobile(account);
                     AppUserData.getInstance().setPassWord(pwd);
                     AppUserData.getInstance().setIsLogin(true);
-//                    EventBus.getDefault().post(new LoginEvent(true));
+                    EventBus.getDefault().post(new LoginEvent(true));
                     if(AppUserData.getInstance().getUserBean().isPartner){//是合伙人
                         startActivity(UpgradeAgentActivity.class);
                     }else {

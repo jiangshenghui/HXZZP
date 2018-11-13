@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:visibility="gone"
         android:layout_height="48dp">
         <ImageView
             android:id="@+id/iv_wx"
@@ -29,7 +28,7 @@
         <ImageView
             android:id="@+id/iv_ce_wx"
             android:layout_width="wrap_content"
-            android:src="@mipmap/icon_image_un_grey_select"
+            android:src="@mipmap/icon_image_select"
             android:layout_marginRight="29dp"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
@@ -60,7 +59,7 @@
         <ImageView
             android:id="@+id/iv_alpay"
             android:layout_width="wrap_content"
-            android:src="@mipmap/icon_image_select"
+            android:src="@mipmap/icon_image_un_grey_select"
             android:layout_marginRight="29dp"
             android:layout_alignParentRight="true"
             android:layout_gravity="right"

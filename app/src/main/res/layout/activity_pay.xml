@@ -48,7 +48,6 @@
             android:id="@+id/tv_vip_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="vip3合伙人"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:textColor="@color/color_ff"

@@ -17,7 +17,7 @@ public class PreOrderBean implements Serializable {
         public String partnerid;
         public String prepayid;
         public String noncestr;
-        public String package1;
+        public String packageA;
         public String timestamp;
         public String sign;
         public String url;

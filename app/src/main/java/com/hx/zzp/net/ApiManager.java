@@ -18,10 +18,10 @@ public class ApiManager {
 
 
 
-    public final static String APP_ID= "wx199ba0e2e9362687" ;
-    public final static String WX_APP_SECRET= "e657944cb7ca233ceeebdf9448974877";
-    public final static String QQ_APP_ID= "1106968884" ;
-    public final static String QQ_WX_APP_KEY= "09krWW4i91ZQuCec";
+    public final static String APP_ID= "wxf2243a9b03aea7d4" ;
+    public final static String WX_APP_SECRET= "bf5e5123f3d280bb9f9bc6d8f554eb7b";
+    public final static String QQ_APP_ID= "1107893107" ;
+    public final static String QQ_WX_APP_KEY= "CzwYTuutMYNPw2BI";
     public final static String WX_TYPE = "02" ;
 
     /**

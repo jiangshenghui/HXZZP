@@ -30,33 +30,11 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
-                <RelativeLayout
-                    android:id="@+id/layout_copy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
 
-                    <ImageView
-                        android:id="@+id/iv_copy1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/btn_share_copy" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/iv_copy1"
-                        android:layout_centerHorizontal="true"
-                        android:text="@string/umeng_copy"
-                        android:textColor="#737373"
-                        android:textSize="12sp" />
-                </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/layout_wx"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:layout_weight="1">
 
                     <ImageView
@@ -78,7 +56,6 @@
                 <RelativeLayout
                     android:id="@+id/layout_pengyou"
                     android:layout_width="match_parent"
-                    android:visibility="invisible"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
@@ -98,10 +75,10 @@
                         android:textColor="#737373"
                         android:textSize="12sp" />
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:id="@+id/layout_weibo"
                     android:layout_width="match_parent"
-                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
                     <ImageView
@@ -124,7 +101,6 @@
                     android:id="@+id/layout_qq"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:layout_weight="1">
 
                     <ImageView
@@ -143,6 +119,29 @@
                         android:textColor="#737373"
                         android:textSize="12sp" />
                 </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/layout_copy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_copy1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/btn_share_copy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_copy1"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/umeng_copy"
+                        android:textColor="#737373"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
 
             </LinearLayout>
         </LinearLayout>

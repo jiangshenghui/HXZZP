@@ -154,9 +154,9 @@
         </RelativeLayout>
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="100dp"
+            android:layout_width="@dimen/x480"
+            android:layout_height="@dimen/y120"
+            android:layout_marginTop="@dimen/x300"
             android:background="@drawable/login_r8_bg_shape"
             android:text="登录"
             android:textColor="@color/white"

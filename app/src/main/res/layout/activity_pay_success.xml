@@ -36,8 +36,8 @@
             android:textSize="18sp"  />
     </RelativeLayout>
    <ImageView
+       android:id="@+id/iv_pay_logo"
        android:layout_width="wrap_content"
-       android:src="@mipmap/ic_pay_alpay"
        android:layout_gravity="center_horizontal"
        android:layout_marginTop="45dp"
        android:layout_height="wrap_content" />

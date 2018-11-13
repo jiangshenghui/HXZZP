@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bg.baseutillib.net.RxNetCallback;
 import com.bg.baseutillib.net.exception.ApiException;
+import com.bg.baseutillib.tool.SharedPreferencesUtil;
 import com.bg.baseutillib.tool.ToastUtil;
 import com.bg.baseutillib.view.TitleBarView;
 import com.hx.zzp.MyApplication;
@@ -45,7 +46,7 @@ public class PayActivity  extends RvBaseActivity {
     private String amount;
     private String vipLevel;
 
-    private String payType = "1";//0 余额 1 支付宝 2 微信
+    private String payType = "2";//0 余额 1 支付宝 2 微信
 
     @Override
     public int setLayoutResID() {
@@ -59,6 +60,7 @@ public class PayActivity  extends RvBaseActivity {
         msgApi = WXAPIFactory.createWXAPI(this, null);
         // 将该app注册到微信
         msgApi.registerApp(ApiManager.APP_ID);
+
     }
 
     @Override
@@ -75,6 +77,21 @@ public class PayActivity  extends RvBaseActivity {
         if (getIntent().getSerializableExtra("vipLevel") != null) {
             vipLevel = getIntent().getStringExtra("vipLevel");
         }
+
+//        String payTy = SharedPreferencesUtil.readString("payType");
+//        if(!TextUtils.isEmpty(payTy)){
+//            payType = payTy;
+//            setPayPage();
+//            if("2".equals(payType)){
+//                ivWx.setImageResource(R.mipmap.icon_image_select);
+//                payType = "2";
+//            }else {
+//                payType = "1";
+//                setPayPage();
+//                ivAlpay.setImageResource(R.mipmap.icon_image_select);
+//            }
+//        }
+
         tvVipLevel.setText(vipLevel+"合伙人");
         tvAmount.setText(getString(R.string.util_money)+amount);
 
@@ -127,6 +144,7 @@ public class PayActivity  extends RvBaseActivity {
                                         AliPay payDemoActivity = new AliPay(activity, new AliPay.AliyPayCallback() {
                                             @Override
                                             public void onReponse(String resultInfo, String resultStatus) {
+//                                                SharedPreferencesUtil.writeString("payType",payType);
                                                 // 判断resultStatus 为9000则代表支付成功
                                                 if (TextUtils.equals(resultStatus, "9000")) {
                                                     String alipayresult = resultInfo.toString();
@@ -148,14 +166,14 @@ public class PayActivity  extends RvBaseActivity {
                                             req.prepayId = result.data.prepayid;
                                             req.nonceStr = result.data.noncestr;
                                             req.timeStamp = result.data.timestamp;
-                                            req.packageValue = result.data.package1;
+                                            req.packageValue = result.data.packageA;
                                             req.sign = result.data.sign;
                                             req.extData = "app data"; // optional
                                             msgApi.sendReq(req);
                                             // 在支付之前，如果应用没有注册到微信，应该先调用IWXMsg.registerApp将应用注册到微信
-//                                            ResponseCache.saveData(this, Constants.WXPAY,"amount",depositPrice);
-//                                            ResponseCache.saveData(this, Constants.WXPAY,"payType",PAY_TYPE_PROJECT);
-//                                            ResponseCache.saveData(this, Constants.WXPAY,"orderId",orderId);
+                                            SharedPreferencesUtil.writeString("amount", result.data.price);
+                                            SharedPreferencesUtil.writeString("vipLevel",vipLevel);
+//                                            SharedPreferencesUtil.writeString("payType",payType);
                                         }catch(Exception e){
 
                                         }
@@ -191,6 +209,7 @@ public class PayActivity  extends RvBaseActivity {
             Bundle bundle = new Bundle();
             bundle.putString("amount",result.data.price);
             bundle.putString("vipLevel",vipLevel);
+            bundle.putString("type",payType);
             startActivity(PaySuccessActivity.class,bundle);
             finish();
         }

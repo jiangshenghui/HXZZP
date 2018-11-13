@@ -23,7 +23,7 @@ public class MyApplication extends BgApplication {
         super.onCreate();
         mInstance = this;
         FileUploadUtil.init(getApplicationContext(), ApiManager.HOST);
-        UMShareAPI.get(this);
+//        UMShareAPI.get(this);
     }
     public static MyApplication getInstance() {
         return mInstance;

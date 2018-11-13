@@ -1,6 +1,5 @@
 package com.hx.zzp.activity.login;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -12,18 +11,17 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
-
 import com.bg.baseutillib.net.CommonNetBean;
 import com.bg.baseutillib.net.RxNetCallback;
 import com.bg.baseutillib.net.exception.ApiException;
 import com.bg.baseutillib.tool.SystemUtils;
 import com.bg.baseutillib.tool.ToastUtil;
-import com.bg.baseutillib.view.TitleBarView;
 import com.bg.baseutillib.view.VerificationCodeView;
 import com.hx.zzp.R;
 import com.hx.zzp.RvBaseActivity;
 import com.hx.zzp.activity.partner.PartnerStatementActivity;
 import com.hx.zzp.activity.partner.UpgradeAgentActivity;
+import com.hx.zzp.event.LoginEvent;
 import com.hx.zzp.net.login.LoginDao;
 import com.hx.zzp.net.login.request.CodeBody;
 import com.hx.zzp.net.login.request.RegisterBody;
@@ -284,7 +282,7 @@ public class RegisterActivity extends RvBaseActivity {
                 AppUserData.getInstance().setMobile(phone);
                 AppUserData.getInstance().setPassWord(pwd);
                 AppUserData.getInstance().setIsLogin(true);
-//                EventBus.getDefault().post(new LoginEvent(true));
+                EventBus.getDefault().post(new LoginEvent(true));
                 if(AppUserData.getInstance().getUserBean().isPartner){//是合伙人
                     startActivity(UpgradeAgentActivity.class);
                 }else {

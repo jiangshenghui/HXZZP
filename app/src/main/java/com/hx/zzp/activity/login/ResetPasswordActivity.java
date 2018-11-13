@@ -16,12 +16,16 @@ import com.hx.zzp.R;
 import com.hx.zzp.RvBaseActivity;
 import com.hx.zzp.activity.partner.PartnerStatementActivity;
 import com.hx.zzp.activity.partner.UpgradeAgentActivity;
+import com.hx.zzp.event.LoginEvent;
 import com.hx.zzp.net.login.LoginDao;
 import com.hx.zzp.net.login.request.RegisterBody;
 import com.hx.zzp.net.login.response.CodeBean;
 import com.hx.zzp.net.login.response.SessionBean;
 import com.hx.zzp.utils.AppConfig;
 import com.hx.zzp.utils.AppUserData;
+
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 /**
@@ -240,7 +244,7 @@ public class ResetPasswordActivity extends RvBaseActivity {
                     AppUserData.getInstance().setMobile(phone);
                     AppUserData.getInstance().setPassWord(pwd);
                     AppUserData.getInstance().setIsLogin(true);
-//                    EventBus.getDefault().post(new LoginEvent(true));
+                    EventBus.getDefault().post(new LoginEvent(true));
                     if(AppUserData.getInstance().getUserBean().isPartner){//是合伙人
                         startActivity(UpgradeAgentActivity.class);
                     }else {
