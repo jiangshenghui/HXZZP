@@ -32,9 +32,7 @@ import com.hx.zzp.net.login.response.SessionBean;
 import com.hx.zzp.utils.AppConfig;
 import com.hx.zzp.utils.AppUserData;
 import com.hx.zzp.utils.Utils;
-
 import org.greenrobot.eventbus.EventBus;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 /**
