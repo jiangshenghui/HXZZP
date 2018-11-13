@@ -3,7 +3,6 @@ package com.hx.zzp.activity.partner;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -138,7 +137,6 @@ public class PayActivity  extends RvBaseActivity {
                             if(result != null){
                                  if("1".equals(payType)){//支付宝
                                     if(result.data != null){
-                                        Log.d("jsh","data:"+result.data);
                                         PreOrderBean.AliPay orderInfo = result.data;
                                         Activity activity = PayActivity.this;
                                         AliPay payDemoActivity = new AliPay(activity, new AliPay.AliyPayCallback() {
