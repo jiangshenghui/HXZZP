@@ -47,7 +47,7 @@ public class SelectDialog implements View.OnClickListener {
 //            desc = getString(R.string.share_text_member);
 //        }
         title = "赚赚拍";;
-        desc = "赚赚拍";
+        desc = "赚赚拍第三代无人娱乐电商平台，成为合伙人共同分享竞拍利润。";
         web.setTitle(title);
         web.setDescription(desc);
 //        if(ZZWApplication.mUserInfo != null && !TextUtils.isEmpty(ZZWApplication.mUserInfo.imageUrl)){
