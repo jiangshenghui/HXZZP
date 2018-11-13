@@ -31,7 +31,6 @@ import com.hx.zzp.utils.AppConfig;
 import com.hx.zzp.utils.AppUserData;
 import com.hx.zzp.utils.StringUtils;
 import com.hx.zzp.widget.AddSpaceTextWatcher;
-
 import org.greenrobot.eventbus.EventBus;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -62,7 +61,7 @@ public class RegisterActivity extends RvBaseActivity {
 //    @BindView(R.id.ckbAgree)
 //    CheckBox ckbAgree;
 
-    private AddSpaceTextWatcher[] asEditTexts=new AddSpaceTextWatcher[3];
+    private AddSpaceTextWatcher[] asEditTexts = new AddSpaceTextWatcher[3];
 
     private EditText[] editTexts=new EditText[3];
     @Override
